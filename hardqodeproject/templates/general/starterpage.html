@@ -1,0 +1,23 @@
+{% extends 'general/default.html' %}
+{% block main_content %}
+
+<div class="product-container">
+{% for product in products %}
+    {% if product in allowed_products %}
+    <div class="product">
+    {% else %}
+    <div class="product noaccess">
+    {% endif %}
+
+
+        <h3>{{ product.name }}</h3>
+        <p> {{ user.username }} </p>
+        <p>by @{{ product.owner }}</p>
+        {% if product.lesson.link_to_video %}
+        <p>{{product.lesson.name}}: <a href="{{product.lesson.link_to_video}}">{{product.lesson.link_to_video}}</a></p>
+        {% endif %}
+    </div>
+{% endfor %}
+</div>
+
+{% endblock main_content %}

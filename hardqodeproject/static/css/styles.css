@@ -1,0 +1,45 @@
+body {
+  background: #333;
+  color: #fff;
+  font-family: "JetBrains Mono", monospace;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.product-container {
+  max-width: 600px;
+  margin: 10em auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.product-container .product {
+  background: #444;
+  color: #eee;
+  padding: 1em 2em;
+}
+.product-container .product:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+.product-container a {
+  color: #48f;
+}
+
+.noaccess {
+  background: #4b4444 !important;
+}
+.noaccess * {
+  filter: blur(14px);
+  position: relative;
+}
+
+.noaccess::before {
+  position: absolute;
+  content: "no access";
+  display: block;
+  text-align: center;
+  margin-top: 1em;
+}/*# sourceMappingURL=styles.css.map */
